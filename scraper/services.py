@@ -10,8 +10,10 @@ logger = logging.getLogger(__name__)
 class ContentOptimizer:
     def __init__(self):
         self.client = OpenAI(
-            api_key=os.getenv('DEEPSEEK_API_KEY'),
-            base_url="https://api.deepseek.com/v1"
+            # api_key=os.getenv('DEEPSEEK_API_KEY'),
+            api_key=os.getenv('AILAB_API_KEY'),
+            base_url="https://api.ailab.ge",
+            # base_url="https://api.deepseek.com/v1"
         )
 
     def optimize_content(self, content, style='INSIGHTS'):
@@ -45,7 +47,8 @@ class ContentOptimizer:
         try:
             logger.info("Attempting to call DeepSeek API...")
             response = self.client.chat.completions.create(
-                model="deepseek-chat",
+                # model="deepseek-chat",
+                model="kona",
                 messages=[
                     {
                     "role": "system", 
