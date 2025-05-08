@@ -1,0 +1,11 @@
+{% extends "scraper/layout.html" %}
+{% block content %}
+<div class="container my-5">
+    <h2>Account Settings</h2>
+    <hr>
+    <h4>Change Password</h4>
+    <a href="{% url 'password_change' %}" class="btn btn-warning mb-3">Change Password</a>
+    <h4>Forgot Password?</h4>
+    <a href="{% url 'password_reset' %}" class="btn btn-outline-primary">Reset Password by Email</a>
+</div>
+{% endblock %}
