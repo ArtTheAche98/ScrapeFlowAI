@@ -1,7 +1,3 @@
-Here’s an updated version of your README.md that includes the YouTube demo link and slightly polishes the wording for clarity and professionalism:
-
-⸻
-
 ScrapeFlow AI
 
 ScrapeFlow AI is a Django-based web application designed for automated scraping, content scheduling, and multi-platform publishing. It allows users to collect data and seamlessly publish to LinkedIn, Meta (Facebook, Threads), and Telegram — all without writing a single line of code.
