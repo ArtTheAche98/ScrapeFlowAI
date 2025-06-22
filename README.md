@@ -18,8 +18,9 @@ ScrapeFlow AI is a Django-based web application designed for automated scraping,
 ⚙️ Setup
 	1.	Clone the repository:
 
-git clone https://github.com/ArtTheAche98/ScrapeFlowAI.git
+`git clone https://github.com/ArtTheAche98/ScrapeFlowAI.git
 cd personal
+`
 
 
 	2.	Create and activate a virtual environment:
