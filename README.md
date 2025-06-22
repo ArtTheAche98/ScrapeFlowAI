@@ -1,78 +1,92 @@
-# ScrapeFlow AI
+Here’s an updated version of your README.md that includes the YouTube demo link and slightly polishes the wording for clarity and professionalism:
 
-ScrapeFlow AI is a Django-based web application for scheduling, scraping, and publishing content to social platforms like LinkedIn, Meta (Facebook, Threads), and Telegram.
+⸻
 
-## Features
+ScrapeFlow AI
 
-- **No-Code Automation:** Easily set up and manage scrapers with an intuitive interface.
-- **Smart Scheduling:** Automate content publishing with flexible scheduling.
-- **Real-time Dashboard:** Monitor your scrapers and data in real-time.
-- **Cloud Storage:** Securely store and access your data.
-- **Multi-Platform Publishing:** Publish scraped content to LinkedIn, Meta, and Telegram.
-- **Telegram Integration:** Send scraped and optimized content directly to Telegram channels or groups.
+ScrapeFlow AI is a Django-based web application designed for automated scraping, content scheduling, and multi-platform publishing. It allows users to collect data and seamlessly publish to LinkedIn, Meta (Facebook, Threads), and Telegram — all without writing a single line of code.
 
-## Setup
+🚀 Features
+	•	No-Code Automation: Create and manage web scrapers with a clean and intuitive UI.
+	•	Smart Scheduling: Schedule publishing at optimal times with built-in Celery + Redis.
+	•	Real-time Dashboard: View scraping status and publishing activity live.
+	•	Cloud Storage: Save and access scraped content securely.
+	•	Multi-Platform Publishing: Instantly publish content to LinkedIn, Meta, and Telegram.
+	•	Telegram Integration: Send AI-enhanced content directly to Telegram channels or groups.
+	•	AI-Powered Optimization: Use DeepSeek AI for summarization or enhancement before publishing.
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/ArtTheAche98/ScrapeFlowAI.git
-   cd personal
-   ```
+🎥 Watch the demo: ScrapeFlow AI on YouTube
 
-2. **Create and activate a virtual environment:**
-   ```sh
-   python3 -m venv .venv
-   source .venv/bin/activate
-   ```
+⸻
 
-3. **Install dependencies:**
-   ```sh
-   pip install -r requirements.txt
-   ```
+⚙️ Setup
+	1.	Clone the repository:
 
-4. **Configure environment variables:**
-   - Create `.env` and fill in your API keys and secrets:
-     ```
-     LINKEDIN_CLIENT_ID=your_linkedin_client_id
-     LINKEDIN_CLIENT_SECRET=your_linkedin_client_secret
-     META_CLIENT_ID=your_meta_client_id
-     META_CLIENT_SECRET=your_meta_client_secret
-     DEEPSEEK_API_KEY=your_deepseek_api_key
-     ```
+git clone https://github.com/ArtTheAche98/ScrapeFlowAI.git
+cd personal
 
-5. **Apply migrations and collect static files:**
-   ```sh
-   python manage.py migrate
-   python manage.py collectstatic
-   ```
 
-6. **Run Redis (for Celery):**
-   ```sh
-   brew services start redis
-   # or
-   redis-server
-   ```
+	2.	Create and activate a virtual environment:
 
-7. **Start Celery worker and beat:**
-   ```sh
-   celery -A personal worker --loglevel=info
-   celery -A personal beat --loglevel=info
-   ```
+python3 -m venv .venv
+source .venv/bin/activate
 
-8. **Run the development server:**
-   ```sh
-   python manage.py runserver 8080
-   ```
 
-## Usage
+	3.	Install dependencies:
 
-- Register a new user or log in.
-- Create scraping schedules from the dashboard.
-- Connect your LinkedIn, Meta, and Telegram accounts in settings.
+pip install -r requirements.txt
 
-## Project Structure
 
-```
+	4.	Configure environment variables:
+Create a .env file and add:
+
+LINKEDIN_CLIENT_ID=your_linkedin_client_id
+LINKEDIN_CLIENT_SECRET=your_linkedin_client_secret
+META_CLIENT_ID=your_meta_client_id
+META_CLIENT_SECRET=your_meta_client_secret
+DEEPSEEK_API_KEY=your_deepseek_api_key
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token
+TELEGRAM_CHAT_ID=your_telegram_chat_id
+
+
+	5.	Apply migrations and collect static files:
+
+python manage.py migrate
+python manage.py collectstatic
+
+
+	6.	Run Redis (required for Celery):
+
+brew services start redis
+# or manually:
+redis-server
+
+
+	7.	Start Celery worker and beat scheduler:
+
+celery -A personal worker --loglevel=info
+celery -A personal beat --loglevel=info
+
+
+	8.	Run the development server:
+
+python manage.py runserver 8080
+
+
+
+⸻
+
+🧑‍💻 Usage
+	•	Register or log in to your account.
+	•	Set up scraping tasks and schedule them.
+	•	Connect your LinkedIn, Meta, and Telegram accounts.
+	•	Enable AI-enhancement (optional).
+	•	View logs and results in the real-time dashboard.
+
+⸻
+
+🗂 Project Structure
+
 personal/
 ├── personal/
 │   ├── settings.py
@@ -92,28 +106,41 @@ personal/
 │   │       ├── linkedin_settings.html
 │   │       ├── telegram_settings.html
 │   │       └── register.html
-│   └── ...
 ├── manage.py
 ├── requirements.txt
 └── README.md
-```
 
-## Environment Variables
 
-| Variable                | Description                       |
-|-------------------------|-----------------------------------|
-| LINKEDIN_CLIENT_ID      | LinkedIn API client ID            |
-| LINKEDIN_CLIENT_SECRET  | LinkedIn API client secret        |
-| META_CLIENT_ID          | Meta (Facebook) API client ID     |
-| META_CLIENT_SECRET      | Meta (Facebook) API client secret |
-| DEEPSEEK_API_KEY        | DeepSeek API key                  |
-| TELEGRAM_BOT_TOKEN      | Telegram bot token                |
-| TELEGRAM_CHAT_ID        | Telegram chat/group ID(s)         |
+⸻
 
-## License
+🔐 Environment Variables
 
-MIT License
+Variable	Description
+LINKEDIN_CLIENT_ID	LinkedIn API Client ID
+LINKEDIN_CLIENT_SECRET	LinkedIn API Client Secret
+META_CLIENT_ID	Meta (Facebook/Threads) Client ID
+META_CLIENT_SECRET	Meta Client Secret
+DEEPSEEK_API_KEY	API key for DeepSeek (AI processing)
+TELEGRAM_BOT_TOKEN	Telegram bot token
+TELEGRAM_CHAT_ID	Chat/group ID(s) for Telegram posting
 
----
 
-**Note:** Telegram integration is now supported. You can connect your Telegram bot and chat IDs in the settings page to enable automated posting. Contributions are welcome!
+⸻
+
+📢 Telegram Integration
+
+ScrapeFlow AI supports full Telegram integration. Add your bot token and chat ID on the settings page to post scraped or AI-generated content to Telegram channels or groups in real time.
+
+⸻
+
+📄 License
+
+MIT Licens
+
+⸻
+
+Let me know if you want to:
+	•	Add contributor credits
+	•	Include deployment instructions (e.g. Docker, Azure)
+	•	Add badges (CI, license, stars)
+	•	Link to your LinkedIn/GitHub profile
